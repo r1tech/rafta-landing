@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gizlilik Politikası — Rafta</title>
+    <meta name="description" content="Rafta Stok Takip uygulaması gizlilik politikası. Verileriniz nasıl toplanır, kullanılır ve korunur.">
+    <link rel="icon" href="https://rafta.app/favicon.ico">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            background: #08090C;
+            color: #C0C7D4;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.7;
+        }
+
+        /* NAV */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 16px 40px;
+            background: rgba(8,9,12,0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo img { height: 24px; width: auto; }
+        .nav-back {
+            font-size: 13px; font-weight: 600; color: #F5820A;
+            text-decoration: none; transition: opacity 0.2s;
+        }
+        .nav-back:hover { opacity: 0.8; }
+
+        /* CONTENT */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 120px 24px 80px;
+        }
+
+        .badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(245,130,10,0.12);
+            border: 1px solid rgba(245,130,10,0.2);
+            padding: 6px 16px; border-radius: 100px;
+            font-size: 12px; font-weight: 600; color: #FF9A2E;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 32px; font-weight: 800; color: #F0F2F5;
+            letter-spacing: -0.03em; margin-bottom: 8px;
+        }
+
+        .updated {
+            font-size: 13px; color: #545B6B; margin-bottom: 48px;
+        }
+
+        h2 {
+            font-size: 18px; font-weight: 700; color: #F0F2F5;
+            margin-top: 40px; margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        p { margin-bottom: 16px; font-size: 15px; }
+
+        ul {
+            margin: 0 0 16px 20px;
+            list-style: none;
+        }
+        ul li {
+            position: relative;
+            padding-left: 16px;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+        ul li::before {
+            content: '';
+            position: absolute; left: 0; top: 10px;
+            width: 5px; height: 5px; border-radius: 50%;
+            background: #F5820A;
+        }
+
+        a { color: #F5820A; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            font-size: 12px; color: #464D5E;
+        }
+
+        @media (max-width: 640px) {
+            .nav { padding: 14px 20px; }
+            .content { padding: 100px 20px 60px; }
+            h1 { font-size: 26px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <a href="https://rafta.app" class="nav-logo">
+        <img src="https://rafta.app/rafta_logo_light.png" alt="Rafta">
+    </a>
+    <a href="https://rafta.app" class="nav-back">← Ana Sayfa</a>
+</nav>
+
+<div class="content">
+    <div class="badge">Yasal</div>
+    <h1>Gizlilik Politikası</h1>
+    <p class="updated">Son güncelleme: 1 Mart 2026</p>
+
+    <p>Rafta ("biz", "uygulama") olarak kullanıcılarımızın gizliliğine büyük önem veriyoruz. Bu politika, iOS uygulaması ve web paneli (panel.rafta.app) aracılığıyla hangi verilerin toplandığını, nasıl kullanıldığını ve nasıl korunduğunu açıklar.</p>
+
+    <h2>1. Toplanan Veriler</h2>
+    <p>Rafta uygulamasını kullanırken aşağıdaki veriler toplanabilir:</p>
+    <ul>
+        <li><strong>Hesap bilgileri:</strong> Ad, soyad, e-posta adresi (hesap oluşturma ve giriş için)</li>
+        <li><strong>İşletme bilgileri:</strong> İşletme adı, sektör, telefon, adres</li>
+        <li><strong>Ürün verileri:</strong> Ürün adları, barkodlar, fiyatlar, stok miktarları, ürün görselleri</li>
+        <li><strong>İşlem verileri:</strong> Stok giriş-çıkış kayıtları, satış işlemleri, gelir-gider kayıtları</li>
+        <li><strong>Ekip verileri:</strong> Ekip üyelerinin ad ve e-posta bilgileri</li>
+        <li><strong>Cihaz bilgileri:</strong> Push bildirim token'ları (Firebase Cloud Messaging)</li>
+    </ul>
+
+    <h2>2. Verilerin Kullanım Amacı</h2>
+    <p>Toplanan veriler yalnızca aşağıdaki amaçlarla kullanılır:</p>
+    <ul>
+        <li>Stok takip ve envanter yönetim hizmetinin sunulması</li>
+        <li>Hesap oluşturma, kimlik doğrulama ve oturum yönetimi</li>
+        <li>Düşük stok ve son kullanma tarihi bildirimleri gönderimi</li>
+        <li>Raporlama ve analiz özelliklerinin sağlanması</li>
+        <li>Uygulama performansının iyileştirilmesi</li>
+    </ul>
+    <p>Verileriniz hiçbir koşulda üçüncü taraflarla paylaşılmaz, satılmaz veya reklam amacıyla kullanılmaz.</p>
+
+    <h2>3. Veri Güvenliği</h2>
+    <p>Tüm veriler Google Firebase altyapısı üzerinde saklanır. Güvenlik önlemlerimiz:</p>
+    <ul>
+        <li>Aktarım sırasında SSL/TLS şifreleme</li>
+        <li>Firebase Firestore güvenlik kuralları ile erişim kontrolü</li>
+        <li>Kullanıcı bazlı veri izolasyonu (her işletme yalnızca kendi verilerine erişebilir)</li>
+        <li>Firebase Authentication ile güvenli kimlik doğrulama</li>
+        <li>Ürün görselleri Firebase Storage'da şifrelenmiş olarak saklanır</li>
+    </ul>
+
+    <h2>4. Üçüncü Taraf Hizmetleri</h2>
+    <p>Rafta aşağıdaki üçüncü taraf hizmetlerini kullanır:</p>
+    <ul>
+        <li><strong>Google Firebase:</strong> Veritabanı, kimlik doğrulama, dosya depolama, push bildirim</li>
+        <li><strong>Google Sign-In / Apple Sign-In:</strong> Sosyal giriş seçenekleri</li>
+        <li><strong>Open Food Facts, UPC Item DB:</strong> Barkod ile ürün bilgisi çekme (yalnızca barkod numarası gönderilir)</li>
+        <li><strong>PayTR:</strong> Web üzerinden ödeme işlemleri (ödeme verileri Rafta'da saklanmaz)</li>
+    </ul>
+
+    <h2>5. Veri Saklama ve Silme</h2>
+    <p>Verileriniz hesabınız aktif olduğu sürece saklanır. Hesabınızı sildiğinizde:</p>
+    <ul>
+        <li>Tüm kişisel bilgileriniz kalıcı olarak silinir</li>
+        <li>İşletme verileri, ürünler, işlemler ve ekip bilgileri tamamen kaldırılır</li>
+        <li>Firebase Authentication kaydınız silinir</li>
+        <li>Bu işlem geri alınamaz</li>
+    </ul>
+    <p>Hesap silme işlemini uygulama içindeki Ayarlar bölümünden gerçekleştirebilirsiniz.</p>
+
+    <h2>6. Çerezler</h2>
+    <p>Web panelimiz (panel.rafta.app) Firebase Authentication için gerekli oturum çerezlerini kullanır. Reklam veya izleme amaçlı çerez kullanılmaz.</p>
+
+    <h2>7. Çocukların Gizliliği</h2>
+    <p>Rafta 13 yaşın altındaki bireylere yönelik değildir. Bilerek 13 yaşın altındaki bireylerden veri toplamayız.</p>
+
+    <h2>8. KVKK Hakları</h2>
+    <p>6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında aşağıdaki haklara sahipsiniz:</p>
+    <ul>
+        <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme</li>
+        <li>Kişisel verileriniz işlenmişse buna ilişkin bilgi talep etme</li>
+        <li>Kişisel verilerinizin işlenme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme</li>
+        <li>Yurt içinde veya yurt dışında kişisel verilerinizin aktarıldığı üçüncü kişileri bilme</li>
+        <li>Kişisel verilerinizin eksik veya yanlış işlenmiş olması halinde bunların düzeltilmesini isteme</li>
+        <li>Kişisel verilerinizin silinmesini veya yok edilmesini isteme</li>
+    </ul>
+
+    <h2>9. Politika Değişiklikleri</h2>
+    <p>Bu gizlilik politikası zaman zaman güncellenebilir. Önemli değişiklikler uygulama içi bildirim ile duyurulacaktır.</p>
+
+    <h2>10. İletişim</h2>
+    <p>Gizlilik politikamız hakkında sorularınız için bizimle iletişime geçebilirsiniz:</p>
+    <p><strong>E-posta:</strong> <a href="mailto:destek@rafta.app">destek@rafta.app</a></p>
+</div>
+
+<div class="footer">
+    © 2026 Rafta. Tüm hakları saklıdır.
+</div>
+
+</body>
+</html>
