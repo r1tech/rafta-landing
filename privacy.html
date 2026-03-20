@@ -13,29 +13,28 @@
 
         body {
             font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
-            background: #08090C;
-            color: #C0C7D4;
+            background: #F8FAFC;
+            color: #475569;
             -webkit-font-smoothing: antialiased;
             line-height: 1.7;
         }
 
-        /* NAV */
         .nav {
             position: fixed; top: 0; left: 0; right: 0; z-index: 100;
             padding: 16px 40px;
-            background: rgba(8,9,12,0.85);
+            background: rgba(248,250,252,0.85);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
             display: flex; align-items: center; justify-content: space-between;
         }
         .nav-logo img { height: 24px; width: auto; }
+        .nav-logo .logo-dark { display: none; }
         .nav-back {
             font-size: 13px; font-weight: 600; color: #F5820A;
             text-decoration: none; transition: opacity 0.2s;
         }
         .nav-back:hover { opacity: 0.8; }
 
-        /* CONTENT */
         .content {
             max-width: 720px;
             margin: 0 auto;
@@ -44,27 +43,27 @@
 
         .badge {
             display: inline-flex; align-items: center; gap: 8px;
-            background: rgba(245,130,10,0.12);
-            border: 1px solid rgba(245,130,10,0.2);
+            background: rgba(245,130,10,0.1);
+            border: 1px solid rgba(245,130,10,0.18);
             padding: 6px 16px; border-radius: 100px;
-            font-size: 12px; font-weight: 600; color: #FF9A2E;
+            font-size: 12px; font-weight: 600; color: #F5820A;
             margin-bottom: 20px;
         }
 
         h1 {
-            font-size: 32px; font-weight: 800; color: #F0F2F5;
+            font-size: 32px; font-weight: 800; color: #0F172A;
             letter-spacing: -0.03em; margin-bottom: 8px;
         }
 
         .updated {
-            font-size: 13px; color: #545B6B; margin-bottom: 48px;
+            font-size: 13px; color: #94A3B8; margin-bottom: 48px;
         }
 
         h2 {
-            font-size: 18px; font-weight: 700; color: #F0F2F5;
+            font-size: 18px; font-weight: 700; color: #0F172A;
             margin-top: 40px; margin-bottom: 12px;
             padding-bottom: 8px;
-            border-bottom: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
         }
 
         p { margin-bottom: 16px; font-size: 15px; }
@@ -86,14 +85,29 @@
             background: #F5820A;
         }
 
+        strong { color: #1E293B; }
         a { color: #F5820A; text-decoration: none; }
         a:hover { text-decoration: underline; }
 
         .footer {
             text-align: center;
             padding: 40px 24px;
-            border-top: 1px solid rgba(255,255,255,0.06);
-            font-size: 12px; color: #464D5E;
+            border-top: 1px solid rgba(0,0,0,0.06);
+            font-size: 12px; color: #94A3B8;
+        }
+
+        /* DARK MODE */
+        @media (prefers-color-scheme: dark) {
+            body { background: #08090C; color: #C0C7D4; }
+            .nav { background: rgba(8,9,12,0.85); border-bottom-color: rgba(255,255,255,0.06); }
+            .nav-logo .logo-light { display: none; }
+            .nav-logo .logo-dark { display: inline; }
+            .badge { background: rgba(245,130,10,0.12); border-color: rgba(245,130,10,0.2); color: #FF9A2E; }
+            h1, h2 { color: #F0F2F5; }
+            strong { color: #F0F2F5; }
+            .updated { color: #545B6B; }
+            h2 { border-bottom-color: rgba(255,255,255,0.06); }
+            .footer { border-top-color: rgba(255,255,255,0.06); color: #464D5E; }
         }
 
         @media (max-width: 640px) {
@@ -107,7 +121,8 @@
 
 <nav class="nav">
     <a href="https://rafta.app" class="nav-logo">
-        <img src="https://rafta.app/rafta_logo_light.png" alt="Rafta">
+        <img src="https://rafta.app/rafta_logo_dark.png" alt="Rafta" class="logo-light">
+        <img src="https://rafta.app/rafta_logo_light.png" alt="Rafta" class="logo-dark">
     </a>
     <a href="https://rafta.app" class="nav-back">← Ana Sayfa</a>
 </nav>
@@ -157,7 +172,6 @@
         <li><strong>Google Firebase:</strong> Veritabanı, kimlik doğrulama, dosya depolama, push bildirim</li>
         <li><strong>Google Sign-In / Apple Sign-In:</strong> Sosyal giriş seçenekleri</li>
         <li><strong>Open Food Facts, UPC Item DB:</strong> Barkod ile ürün bilgisi çekme (yalnızca barkod numarası gönderilir)</li>
-        <li><strong>PayTR:</strong> Web üzerinden ödeme işlemleri (ödeme verileri Rafta'da saklanmaz)</li>
     </ul>
 
     <h2>5. Veri Saklama ve Silme</h2>
