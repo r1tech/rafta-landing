@@ -5,40 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abonelik Koşulları — Rafta</title>
     <meta name="description" content="Rafta abonelik koşulları ve otomatik yenileme politikası">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
             background: #F8FAFC;
-            color: #0F172A;
-            line-height: 1.7;
+            color: #1E293B;
+            line-height: 1.75;
             -webkit-font-smoothing: antialiased;
         }
 
         .container {
             max-width: 720px;
             margin: 0 auto;
-            padding: 60px 24px 80px;
+            padding: 48px 24px 80px;
         }
 
-        .logo {
-            margin-bottom: 40px;
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 48px;
         }
 
-        .logo a {
+        .header a img {
+            height: 28px;
+        }
+
+        .header .back-link {
+            font-size: 14px;
+            color: #64748B;
             text-decoration: none;
-            font-size: 22px;
-            font-weight: 800;
+            transition: color 0.2s;
+        }
+
+        .header .back-link:hover {
             color: #F5820A;
-            letter-spacing: -0.5px;
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #F5820A;
+            background: rgba(245, 130, 10, 0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 16px;
         }
 
         h1 {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 700;
             color: #0F172A;
             margin-bottom: 8px;
+            letter-spacing: -0.5px;
         }
 
         .date {
@@ -47,129 +74,165 @@
             margin-bottom: 40px;
         }
 
-        .section {
-            margin-bottom: 32px;
+        .intro {
+            font-size: 15px;
+            color: #475569;
+            margin-bottom: 36px;
         }
 
-        .section h2 {
+        h2 {
             font-size: 18px;
             font-weight: 600;
             color: #0F172A;
+            margin-top: 36px;
             margin-bottom: 12px;
         }
 
-        .section p {
+        p {
             font-size: 15px;
             color: #475569;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
 
-        .section strong {
-            color: #0F172A;
+        ul {
+            margin: 8px 0 10px 20px;
+            font-size: 15px;
+            color: #475569;
         }
 
-        .section a {
+        ul li {
+            margin-bottom: 6px;
+        }
+
+        strong {
+            color: #1E293B;
+        }
+
+        a {
             color: #F5820A;
-            text-decoration: underline;
-        }
-
-        .footer {
-            margin-top: 48px;
-            padding-top: 24px;
-            border-top: 1px solid #E2E8F0;
-            display: flex;
-            gap: 24px;
-            font-size: 13px;
-        }
-
-        .footer a {
-            color: #94A3B8;
             text-decoration: none;
         }
 
-        .footer a:hover {
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 56px;
+            padding-top: 24px;
+            border-top: 1px solid #E2E8F0;
+            text-align: center;
+            font-size: 13px;
+            color: #94A3B8;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 16px;
+        }
+
+        .footer-links a {
+            color: #94A3B8;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .footer-links a:hover {
             color: #F5820A;
         }
 
         @media (prefers-color-scheme: dark) {
-            body { background: #0F172A; color: #F1F5F9; }
-            h1, .section h2, .section strong { color: #F1F5F9; }
-            .section p { color: #94A3B8; }
+            body { background: #0F172A; color: #CBD5E1; }
+            h1, h2, strong { color: #F1F5F9; }
+            p, ul, .intro { color: #94A3B8; }
             .date { color: #64748B; }
-            .footer { border-color: #334155; }
-            .footer a { color: #64748B; }
+            .header .back-link { color: #64748B; }
+            .footer { border-color: #1E293B; color: #64748B; }
+            .footer-links a { color: #64748B; }
         }
 
         @media (max-width: 480px) {
-            .container { padding: 40px 18px 60px; }
-            h1 { font-size: 24px; }
-            .footer { flex-wrap: wrap; gap: 16px; }
+            .container { padding: 32px 18px 60px; }
+            h1 { font-size: 26px; }
+            .header { flex-direction: column; align-items: flex-start; gap: 12px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="logo">
-            <a href="/"><img src="/rafta_logo_light.png" alt="Rafta" style="height: 32px;"></a>
+
+        <!-- Header -->
+        <div class="header">
+            <a href="https://rafta.app"><img src="/rafta_logo_light.png" alt="Rafta"></a>
+            <a href="https://rafta.app" class="back-link">← Ana Sayfa</a>
         </div>
 
+        <!-- Badge + Title -->
+        <span class="badge">Yasal</span>
         <h1>Abonelik Koşulları</h1>
         <p class="date">Son güncelleme: 20 Mart 2026</p>
 
-        <div class="section">
-            <h2>1. Abonelik Planları</h2>
-            <p>Rafta uygulaması aşağıdaki abonelik planlarını sunmaktadır:</p>
-            <p><strong>Free:</strong> Temel stok takibi özellikleri. 50 ürüne kadar, tek kullanıcı.</p>
-            <p><strong>Premium (Aylık / Yıllık):</strong> 500 ürüne kadar, 3 ekip üyesi, detaylı raporlar, SKT takibi, CSV dışa aktarma, offline çalışma.</p>
-            <p><strong>Business (Aylık / Yıllık):</strong> Sınırsız ürün ve ekip üyesi, gelişmiş raporlar, çoklu depo yönetimi, öncelikli destek, offline çalışma.</p>
-        </div>
+        <p class="intro">Bu abonelik koşulları, Rafta stok takip ve envanter yönetim uygulamasının ücretli abonelik planlarına ilişkin şartları düzenler. Abonelik satın alarak bu koşulları kabul etmiş sayılırsınız.</p>
 
-        <div class="section">
-            <h2>2. Ödeme ve Faturalandırma</h2>
-            <p>Tüm abonelik ödemeleri Apple App Store üzerinden işlenir. Ödeme, satın alma onayı anında Apple ID hesabınızdan tahsil edilir. Abonelik ücretleri Türk Lirası (TRY) cinsinden belirlenir ve Apple'ın güncel fiyatlandırma politikasına tabidir.</p>
-        </div>
+        <!-- Sections -->
+        <h2>1. Abonelik Planları</h2>
+        <p>Rafta uygulaması aşağıdaki abonelik planlarını sunmaktadır:</p>
+        <ul>
+            <li><strong>Ücretsiz Plan:</strong> Temel stok takibi özellikleri. 50 ürüne kadar, tek kullanıcı.</li>
+            <li><strong>Deneme Süresi:</strong> Yeni hesaplar 15 gün boyunca tüm Premium özellikleri ücretsiz deneyebilir.</li>
+            <li><strong>Premium Plan:</strong> Aylık ₺79 veya yıllık ₺499. 500 ürüne kadar, 3 ekip üyesi, detaylı raporlar, SKT takibi, CSV dışa aktarma, offline çalışma.</li>
+            <li><strong>Business Plan:</strong> Aylık ₺149 veya yıllık ₺999. Sınırsız ürün ve ekip üyesi, gelişmiş raporlar, çoklu depo yönetimi, öncelikli destek, offline çalışma.</li>
+        </ul>
 
-        <div class="section">
-            <h2>3. Otomatik Yenileme</h2>
-            <p>Abonelikler otomatik olarak yenilenir. Aylık abonelikler her ay, yıllık abonelikler her yıl aynı tarihte yenilenir. Yenileme ücreti, mevcut dönemin sona ermesinden 24 saat önce hesabınızdan tahsil edilir.</p>
-        </div>
+        <h2>2. Ödeme ve Faturalandırma</h2>
+        <p>Tüm abonelik ödemeleri Apple App Store üzerinden işlenir. Ödeme, satın alma onayı anında Apple ID hesabınızdan tahsil edilir. Abonelik ücretleri Türk Lirası (TRY) cinsinden belirlenir ve Apple'ın güncel fiyatlandırma politikasına tabidir.</p>
 
-        <div class="section">
-            <h2>4. Deneme Süresi</h2>
-            <p>Yeni kullanıcılar 15 günlük ücretsiz deneme süresinden yararlanabilir. Deneme süresi boyunca Premium plan özellikleri kullanılabilir. Deneme süresi sonunda otomatik olarak Free plana geçiş yapılır; herhangi bir ücret tahsil edilmez.</p>
-        </div>
+        <h2>3. Otomatik Yenileme</h2>
+        <p>Abonelikler otomatik olarak yenilenir. Aylık abonelikler her ay, yıllık abonelikler her yıl aynı tarihte yenilenir. Yenileme ücreti, mevcut dönemin sona ermesinden 24 saat önce hesabınızdan tahsil edilir.</p>
+        <p>Otomatik yenilemeyi kapatmak için mevcut dönemin bitmesinden en az 24 saat önce iptal işlemi yapılmalıdır.</p>
 
-        <div class="section">
-            <h2>5. İptal ve İade</h2>
-            <p>Aboneliğinizi istediğiniz zaman iptal edebilirsiniz. İptal işlemi iPhone veya iPad üzerinden Ayarlar &gt; Apple ID &gt; Abonelikler bölümünden yapılır. İptal edilen abonelik, mevcut fatura döneminin sonuna kadar aktif kalır.</p>
-            <p>İade talepleri Apple'ın iade politikasına tabidir. İade başvurusu için Apple Destek ile iletişime geçebilir veya reportaproblem.apple.com adresini ziyaret edebilirsiniz.</p>
-        </div>
+        <h2>4. Deneme Süresi</h2>
+        <p>Yeni kullanıcılar 15 günlük ücretsiz deneme süresinden yararlanabilir. Deneme süresi boyunca Premium plan özellikleri kullanılabilir. Deneme süresi sonunda otomatik olarak Ücretsiz plana geçiş yapılır; herhangi bir ücret tahsil edilmez.</p>
 
-        <div class="section">
-            <h2>6. Fiyat Değişiklikleri</h2>
-            <p>Abonelik fiyatları önceden bildirimde bulunarak değiştirilebilir. Fiyat değişikliği durumunda Apple, mevcut abonelere bildirim gönderir ve onay alır. Onaylanmayan fiyat değişikliklerinde abonelik iptal edilir.</p>
-        </div>
+        <h2>5. İptal</h2>
+        <p>Aboneliğinizi istediğiniz zaman iptal edebilirsiniz. İptal işlemi iPhone veya iPad üzerinden <strong>Ayarlar → Apple ID → Abonelikler</strong> bölümünden yapılır. İptal edilen abonelik, mevcut fatura döneminin sonuna kadar aktif kalır.</p>
+        <p>Aboneliğin iptal edilmesi halinde mevcut dönem sona erene kadar tüm premium özellikler kullanılabilir. Dönem sonunda hesabınız otomatik olarak Ücretsiz plana geçer.</p>
 
-        <div class="section">
-            <h2>7. Plan Değişikliği</h2>
-            <p>Planınızı istediğiniz zaman yükseltebilir veya düşürebilirsiniz. Yükseltme anında geçerli olur ve fiyat farkı orantılı olarak hesaplanır. Düşürme işlemi mevcut dönemin sonunda geçerli olur.</p>
-        </div>
+        <h2>6. İade Politikası</h2>
+        <p>İade talepleri Apple'ın iade politikasına tabidir. İade başvurusu için Apple Destek ile iletişime geçebilir veya <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a> adresini ziyaret edebilirsiniz. Rafta, Apple üzerinden yapılan ödemelerde doğrudan iade işlemi gerçekleştirememektedir.</p>
 
-        <div class="section">
-            <h2>8. Hesap Silme</h2>
-            <p>Hesabınızı silmeniz durumunda aktif aboneliğiniz otomatik olarak iptal edilmez. Hesap silmeden önce aboneliğinizi Apple Ayarlar üzerinden iptal etmeniz gerekmektedir. Hesap silme işlemi sonrasında tüm verileriniz kalıcı olarak silinir.</p>
-        </div>
+        <h2>7. Fiyat Değişiklikleri</h2>
+        <p>Abonelik fiyatları önceden bildirimde bulunarak değiştirilebilir. Fiyat değişikliği durumunda Apple, mevcut abonelere bildirim gönderir ve onay alır. Onaylanmayan fiyat değişikliklerinde abonelik iptal edilir.</p>
 
-        <div class="section">
-            <h2>9. Veri ve Gizlilik</h2>
-            <p>Abonelik bilgileriniz Apple tarafından işlenir. Rafta, kredi kartı veya ödeme bilgilerinize erişmez. Kişisel verilerinizin işlenmesi hakkında detaylı bilgi için <a href="/privacy">Gizlilik Politikamızı</a> inceleyebilirsiniz.</p>
-        </div>
+        <h2>8. Plan Değişikliği</h2>
+        <p>Planınızı istediğiniz zaman yükseltebilir veya düşürebilirsiniz. Yükseltme anında geçerli olur ve fiyat farkı orantılı olarak hesaplanır. Düşürme işlemi mevcut dönemin sonunda geçerli olur.</p>
 
-        <div class="section">
-            <h2>10. İletişim</h2>
-            <p>Abonelik koşulları hakkında sorularınız için <a href="/cdn-cgi/l/email-protection#432726303726280331222537226d223333"><span class="__cf_email__" data-cfemail="bdd9d8cec9d8d6fdcfdcdbc9dc93dccdcd">[email&#160;protected]</span></a> adresinden bize ulaşabilirsiniz.</p>
-        </div>
+        <h2>9. Hesap Silme</h2>
+        <p>Hesabınızı silmeniz durumunda aktif aboneliğiniz otomatik olarak iptal edilmez. Hesap silmeden önce aboneliğinizi Apple Ayarlar üzerinden iptal etmeniz gerekmektedir. Hesap silme işlemi sonrasında tüm verileriniz kalıcı olarak silinir.</p>
 
+        <h2>10. Veri ve Gizlilik</h2>
+        <p>Abonelik bilgileriniz Apple tarafından işlenir. Rafta, kredi kartı veya ödeme bilgilerinize erişmez. Kişisel verilerinizin işlenmesi hakkında detaylı bilgi için <a href="/privacy">Gizlilik Politikamızı</a> inceleyebilirsiniz.</p>
+
+        <h2>11. Uygulanacak Hukuk</h2>
+        <p>Bu koşullar Türkiye Cumhuriyeti kanunlarına tabidir. Uyuşmazlıklarda İstanbul Mahkemeleri ve İcra Daireleri yetkilidir.</p>
+
+        <h2>12. İletişim</h2>
+        <p>Abonelik koşulları hakkında sorularınız için bizimle iletişime geçebilirsiniz:</p>
+        <p><strong>E-posta:</strong> <a href="mailto:destek@rafta.app">destek@rafta.app</a></p>
+
+        <!-- Footer -->
         <div class="footer">
-            <a href="/privacy">Gizlilik Politikası</a>
-     
+            <div class="footer-links">
+                <a href="/privacy">Gizlilik Politikası</a>
+                <a href="/terms">Kullanım Şartları</a>
+                <a href="https://rafta.app">Ana Sayfa</a>
+            </div>
+            <p>© 2026 Rafta. Tüm hakları saklıdır.</p>
+        </div>
+
+    </div>
+</body>
+</html>
