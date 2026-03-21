@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destek — Rafta</title>
+    <meta name="description" content="Rafta Stok Takip uygulaması destek ve iletişim sayfası.">
+    <link rel="icon" href="https://rafta.app/favicon.ico">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            background: #F8FAFC;
+            color: #475569;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.7;
+        }
+
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 16px 40px;
+            background: rgba(248,250,252,0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .nav-logo img { height: 24px; width: auto; }
+        .nav-logo .logo-dark { display: none; }
+        .nav-back {
+            font-size: 13px; font-weight: 600; color: #F5820A;
+            text-decoration: none; transition: opacity 0.2s;
+        }
+        .nav-back:hover { opacity: 0.8; }
+
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 120px 24px 80px;
+        }
+
+        .badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(245,130,10,0.1);
+            border: 1px solid rgba(245,130,10,0.18);
+            padding: 6px 16px; border-radius: 100px;
+            font-size: 12px; font-weight: 600; color: #F5820A;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 32px; font-weight: 800; color: #0F172A;
+            letter-spacing: -0.03em; margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 16px; color: #64748B; margin-bottom: 48px;
+        }
+
+        h2 {
+            font-size: 18px; font-weight: 700; color: #0F172A;
+            margin-top: 40px; margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+
+        p { margin-bottom: 16px; font-size: 15px; }
+
+        strong { color: #1E293B; }
+        a { color: #F5820A; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        .contact-card {
+            display: flex; align-items: center; gap: 16px;
+            padding: 20px 24px;
+            background: #FFFFFF;
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 14px;
+            margin-bottom: 12px;
+            transition: border-color 0.2s;
+        }
+        .contact-card:hover { border-color: #F5820A; }
+
+        .contact-icon {
+            width: 44px; height: 44px;
+            background: rgba(245,130,10,0.1);
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 20px; flex-shrink: 0;
+        }
+
+        .contact-info { flex: 1; }
+        .contact-info .label {
+            font-size: 13px; color: #94A3B8; font-weight: 500;
+        }
+        .contact-info .value {
+            font-size: 15px; color: #0F172A; font-weight: 600;
+        }
+        .contact-info .value a { color: #0F172A; }
+        .contact-info .value a:hover { color: #F5820A; }
+
+        .faq-item {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-q {
+            font-size: 15px; font-weight: 600; color: #0F172A; margin-bottom: 8px;
+        }
+        .faq-a {
+            font-size: 14px; color: #64748B; line-height: 1.6;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 24px;
+            border-top: 1px solid rgba(0,0,0,0.06);
+            font-size: 12px; color: #94A3B8;
+        }
+        .footer-links {
+            display: flex; justify-content: center; gap: 24px; margin-bottom: 16px;
+        }
+        .footer-links a { color: #94A3B8; text-decoration: none; font-size: 13px; }
+        .footer-links a:hover { color: #F5820A; }
+
+        /* DARK MODE */
+        @media (prefers-color-scheme: dark) {
+            body { background: #08090C; color: #C0C7D4; }
+            .nav { background: rgba(8,9,12,0.85); border-bottom-color: rgba(255,255,255,0.06); }
+            .nav-logo .logo-light { display: none; }
+            .nav-logo .logo-dark { display: inline; }
+            .badge { background: rgba(245,130,10,0.12); border-color: rgba(245,130,10,0.2); color: #FF9A2E; }
+            h1, h2, strong { color: #F0F2F5; }
+            .subtitle { color: #64748B; }
+            h2 { border-bottom-color: rgba(255,255,255,0.06); }
+            .contact-card { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.06); }
+            .contact-card:hover { border-color: #F5820A; }
+            .contact-info .value, .contact-info .value a { color: #F0F2F5; }
+            .faq-q { color: #F0F2F5; }
+            .faq-a { color: #94A3B8; }
+            .faq-item { border-bottom-color: rgba(255,255,255,0.06); }
+            .footer { border-top-color: rgba(255,255,255,0.06); color: #464D5E; }
+            .footer-links a { color: #64748B; }
+        }
+
+        @media (max-width: 640px) {
+            .nav { padding: 14px 20px; }
+            .content { padding: 100px 20px 60px; }
+            h1 { font-size: 26px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <a href="https://rafta.app" class="nav-logo">
+        <img src="https://rafta.app/rafta_logo_dark.png" alt="Rafta" class="logo-light">
+        <img src="https://rafta.app/rafta_logo_light.png" alt="Rafta" class="logo-dark">
+    </a>
+    <a href="https://rafta.app" class="nav-back">← Ana Sayfa</a>
+</nav>
+
+<div class="content">
+    <span class="badge">Destek</span>
+    <h1>Yardım & İletişim</h1>
+    <p class="subtitle">Rafta ile ilgili sorularınız için size yardımcı olmaktan mutluluk duyarız.</p>
+
+    <!-- İletişim Kartları -->
+    <div class="contact-card">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-info">
+            <div class="label">E-posta</div>
+            <div class="value"><a href="mailto:destek@rafta.app">destek@rafta.app</a></div>
+        </div>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-icon">🌐</div>
+        <div class="contact-info">
+            <div class="label">Web Paneli</div>
+            <div class="value"><a href="https://panel.rafta.app">panel.rafta.app</a></div>
+        </div>
+    </div>
+
+    <!-- SSS -->
+    <h2>Sıkça Sorulan Sorular</h2>
+
+    <div class="faq-item">
+        <div class="faq-q">Rafta ücretsiz mi?</div>
+        <div class="faq-a">Evet, Free plan ile 50 ürüne kadar süresiz ücretsiz kullanabilirsiniz. Daha fazla özellik için Premium veya Business planlara yükseltebilirsiniz.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">Aboneliğimi nasıl iptal edebilirim?</div>
+        <div class="faq-a">iPhone veya iPad üzerinden Ayarlar → Apple ID → Abonelikler bölümünden Rafta aboneliğinizi iptal edebilirsiniz. İptal edilen abonelik dönem sonuna kadar aktif kalır.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">İnternetsiz çalışır mı?</div>
+        <div class="faq-a">Evet, Rafta offline modda çalışır. İnternet bağlantısı olmadan stok güncellemesi, ürün ekleme ve düzenleme yapabilirsiniz. İnternet geldiğinde verileriniz otomatik senkronize edilir.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">Ekip üyesi nasıl eklerim?</div>
+        <div class="faq-a">Ayarlar → Ekip Yönetimi bölümünden davet kodu oluşturarak ekip üyelerinizi davet edebilirsiniz. Her üyeye farklı rol ve izinler atayabilirsiniz.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">Verilerim güvende mi?</div>
+        <div class="faq-a">Tüm verileriniz Google Firebase altyapısında SSL/TLS şifreleme ile korunur. Her işletme yalnızca kendi verilerine erişebilir. Detaylı bilgi için <a href="/privacy">Gizlilik Politikamızı</a> inceleyebilirsiniz.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">Hesabımı nasıl silebilirim?</div>
+        <div class="faq-a">Uygulama içinden Ayarlar → Hesabı Sil bölümünden hesabınızı ve tüm verilerinizi kalıcı olarak silebilirsiniz. Bu işlem geri alınamaz.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-q">Web panelinden de kullanabilir miyim?</div>
+        <div class="faq-a">Evet, <a href="https://panel.rafta.app">panel.rafta.app</a> adresinden bilgisayar üzerinden tüm stok yönetimi işlemlerinizi yapabilirsiniz. iOS uygulaması ve web paneli anlık senkronize çalışır.</div>
+    </div>
+
+    <!-- Destek Saatleri -->
+    <h2>Destek Bilgileri</h2>
+    <p>E-posta ile gönderilen destek taleplerine en geç <strong>24 saat</strong> içinde yanıt verilmektedir.</p>
+    <p>Uygulama içi geri bildirim formunu kullanarak da bize ulaşabilirsiniz: <strong>Ayarlar → Geri Bildirim</strong></p>
+</div>
+
+<div class="footer">
+    <div class="footer-links">
+        <a href="/privacy">Gizlilik Politikası</a>
+        <a href="/terms">Kullanım Şartları</a>
+        <a href="/subscription-terms">Abonelik Koşulları</a>
+        <a href="https://rafta.app">Ana Sayfa</a>
+    </div>
+    <p>© 2026 Rafta. Tüm hakları saklıdır.</p>
+</div>
+
+</body>
+</html>
