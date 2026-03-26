@@ -108,6 +108,17 @@ a { color: inherit; text-decoration: none; }
 .container { max-width: 1160px; margin: 0 auto; padding: 0 24px; }
 
 /* ═══════════════════════════════════════════
+   SVG ICON SIZING INSIDE CONTAINERS
+   ═══════════════════════════════════════════ */
+.feature-icon svg { width: 20px; height: 20px; }
+.sector-chip .e { display: inline-flex; align-items: center; }
+.sector-chip .e svg { width: 14px; height: 14px; }
+.cross-feature-icon svg { width: 16px; height: 16px; }
+.phone-header-icon svg { width: 14px; height: 14px; }
+.dash-sidebar-logo svg { width: 14px; height: 14px; }
+.cross-phone-bar svg { width: 12px; height: 12px; }
+
+/* ═══════════════════════════════════════════
    NAV
    ═══════════════════════════════════════════ */
 nav {
@@ -325,6 +336,7 @@ nav.scrolled {
 .dash-sidebar-logo {
     font-size: 15px; font-weight: 800; color: var(--accent);
     margin-bottom: 20px; letter-spacing: -0.5px;
+    display: flex; align-items: center; gap: 6px;
 }
 .dash-sidebar-item {
     display: flex; align-items: center; gap: 8px;
@@ -541,9 +553,9 @@ section { padding: 110px 24px; position: relative; }
     display: flex; align-items: center; justify-content: center;
     font-size: 20px; margin-bottom: 18px;
 }
-.feature-icon.orange { background: var(--accent-glow); }
-.feature-icon.green { background: var(--green-glow); }
-.feature-icon.blue { background: var(--blue-glow); }
+.feature-icon.orange { background: var(--accent-glow); color: var(--accent); }
+.feature-icon.green { background: var(--green-glow); color: var(--green); }
+.feature-icon.blue { background: var(--blue-glow); color: var(--blue); }
 .feature-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
 .feature-card p { font-size: 14px; color: var(--text-secondary); line-height: 1.65; }
 .feature-tag {
@@ -598,7 +610,7 @@ section { padding: 110px 24px; position: relative; }
     display: flex; justify-content: space-between; align-items: center;
     margin-bottom: 10px;
 }
-.cross-phone-bar-title { font-size: 11px; font-weight: 800; }
+.cross-phone-bar-title { font-size: 11px; font-weight: 800; display: flex; align-items: center; gap: 4px; }
 .cross-phone-item {
     background: var(--mockup-inner-bg);
     border-radius: 8px; padding: 8px;
@@ -623,6 +635,7 @@ section { padding: 110px 24px; position: relative; }
     flex-shrink: 0; width: 36px; height: 36px; border-radius: 10px;
     background: var(--accent-glow);
     display: flex; align-items: center; justify-content: center; font-size: 16px;
+    color: var(--accent);
 }
 .cross-feature h4 { font-size: 15px; font-weight: 700; margin-bottom: 3px; }
 .cross-feature p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; }
@@ -636,9 +649,10 @@ section { padding: 110px 24px; position: relative; }
     border: 1px solid var(--border); background: var(--bg-card);
     font-size: 14px; font-weight: 500; color: var(--text-secondary);
     transition: all 0.3s; cursor: default;
+    display: inline-flex; align-items: center;
 }
 .sector-chip:hover { border-color: var(--border-accent); color: var(--text); background: var(--bg-card-hover); }
-.sector-chip .e { margin-right: 6px; }
+.sector-chip .e { margin-right: 6px; display: inline-flex; align-items: center; }
 
 /* ═══════════════════════════════════════════
    PRICING
@@ -848,7 +862,7 @@ footer { border-top: 1px solid var(--border); padding: 56px 24px 36px; }
                 <div class="browser-body">
                     <div class="dash-mock">
                         <div class="dash-sidebar">
-                            <div class="dash-sidebar-logo">☰ Rafta</div>
+                            <div class="dash-sidebar-logo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg> Rafta</div>
                             <div class="dash-sidebar-item active"><div class="dash-sidebar-icon"></div> Dashboard</div>
                             <div class="dash-sidebar-item"><div class="dash-sidebar-icon"></div> Ürünler</div>
                             <div class="dash-sidebar-item"><div class="dash-sidebar-icon"></div> Müşteriler</div>
@@ -886,7 +900,7 @@ footer { border-top: 1px solid var(--border); padding: 56px 24px 36px; }
                 <div class="phone-body">
                     <div class="phone-header">
                         <div class="phone-header-title">Ürünler</div>
-                        <div class="phone-header-icon">📷</div>
+                        <div class="phone-header-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
                     </div>
                     <div class="phone-card">
                         <div><div class="phone-card-name">Süt 1L</div><div class="phone-card-sub">Süt Ürünleri</div></div>
@@ -959,12 +973,12 @@ footer { border-top: 1px solid var(--border); padding: 56px 24px 36px; }
             <p class="section-desc">Web'de derinlemesine yönet, mobilde hızlıca işlem yap. Her iki platformda da tam deneyim.</p>
         </div>
         <div class="features-grid">
-            <div class="feature-card anim"><div class="feature-icon orange">📦</div><h3>Barkod ile Stok Takip</h3><p>Kameranla barkod tara, ürünü anında bul. Stok giriş-çıkışını tek dokunuşla kaydet.</p></div>
-            <div class="feature-card anim"><div class="feature-icon green">📊</div><h3>Gelişmiş Raporlar</h3><p>Satış grafiği, kâr analizi, ürün sıralaması ve stok devir hızı raporları.</p><span class="feature-tag">Premium</span></div>
-            <div class="feature-card anim"><div class="feature-icon blue">👥</div><h3>Ekip Yönetimi</h3><p>Personelini davet et, yönetici veya personel rolü ata. Granüler yetki kontrolü.</p></div>
-            <div class="feature-card anim"><div class="feature-icon orange">⏰</div><h3>SKT Takibi</h3><p>Son kullanma tarihi yaklaşan ürünlerin için otomatik uyarı al, fire oranını düşür.</p></div>
-            <div class="feature-card anim"><div class="feature-icon green">💰</div><h3>Cari Hesap & Çek/Senet</h3><p>Müşteri ve tedarikçi carilerini takip et. Çek, senet ve ciro yönetimi dahil.</p></div>
-            <div class="feature-card anim"><div class="feature-icon blue">📥</div><h3>Toplu Ürün Yükleme</h3><p>Excel veya CSV dosyanı yükle, yüzlerce ürünü saniyeler içinde ekle.</p></div>
+            <div class="feature-card anim"><div class="feature-icon orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="3" height="16" rx="1"/><rect x="10.5" y="4" width="3" height="16" rx="1"/><path d="M18 4h3M18 8h3M18 12h3M18 16h3M18 20h3"/></svg></div><h3>Barkod ile Stok Takip</h3><p>Kameranla barkod tara, ürünü anında bul. Stok giriş-çıkışını tek dokunuşla kaydet.</p></div>
+            <div class="feature-card anim"><div class="feature-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 16l4-6 4 4 5-8"/></svg></div><h3>Gelişmiş Raporlar</h3><p>Satış grafiği, kâr analizi, ürün sıralaması ve stok devir hızı raporları.</p><span class="feature-tag">Premium</span></div>
+            <div class="feature-card anim"><div class="feature-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M9 13c-4 0-6 2-6 4v1h12v-1c0-2-2-4-6-4z"/><path d="M17 7l2 2 4-4"/></svg></div><h3>Ekip Yönetimi</h3><p>Personelini davet et, yönetici veya personel rolü ata. Granüler yetki kontrolü.</p></div>
+            <div class="feature-card anim"><div class="feature-icon orange"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div><h3>SKT Takibi</h3><p>Son kullanma tarihi yaklaşan ürünlerin için otomatik uyarı al, fire oranını düşür.</p></div>
+            <div class="feature-card anim"><div class="feature-icon green"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><rect x="6" y="14" width="4" height="2" rx="0.5"/></svg></div><h3>Cari Hesap & Çek/Senet</h3><p>Müşteri ve tedarikçi carilerini takip et. Çek, senet ve ciro yönetimi dahil.</p></div>
+            <div class="feature-card anim"><div class="feature-icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 001 1h4"/><path d="M17 21H7a2 2 0 01-2-2V5a2 2 0 012-2h7l5 5v11a2 2 0 01-2 2z"/><path d="M12 11v6M9 14l3 3 3-3"/></svg></div><h3>Toplu Ürün Yükleme</h3><p>Excel veya CSV dosyanı yükle, yüzlerce ürünü saniyeler içinde ekle.</p></div>
         </div>
     </div>
 </section>
@@ -996,7 +1010,7 @@ footer { border-top: 1px solid var(--border); padding: 56px 24px 36px; }
                 <div class="cross-phone">
                     <div class="cross-phone-screen">
                         <div class="cross-phone-bar">
-                            <div class="cross-phone-bar-title">📦 Ürünler</div>
+                            <div class="cross-phone-bar-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg> Ürünler</div>
                         </div>
                         <div class="cross-phone-item"><span>Süt 1L</span><span style="color:var(--green)">48</span></div>
                         <div class="cross-phone-item"><span>Ekmek</span><span style="color:var(--green)">120</span></div>
@@ -1010,9 +1024,9 @@ footer { border-top: 1px solid var(--border); padding: 56px 24px 36px; }
                 <h2 class="section-title" style="font-size:28px;">Tüm cihazlarda<br>aynı veri</h2>
                 <p class="section-desc">Web'de yaptığın değişiklik mobilde anında görünür. Ekibinle aynı anda çalış.</p>
                 <div class="cross-features">
-                    <div class="cross-feature"><div class="cross-feature-icon">🖥️</div><div><h4>Web Paneli</h4><p>Detaylı raporlar, toplu düzenleme, ekip yönetimi</p></div></div>
-                    <div class="cross-feature"><div class="cross-feature-icon">📱</div><div><h4>Mobil Uygulama</h4><p>Barkod tarama, hızlı stok sayım, sahada erişim</p></div></div>
-                    <div class="cross-feature"><div class="cross-feature-icon">☁️</div><div><h4>Bulut Altyapı</h4><p>Firebase ile güvenli, anlık senkronizasyon</p></div></div>
+                    <div class="cross-feature"><div class="cross-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div><div><h4>Web Paneli</h4><p>Detaylı raporlar, toplu düzenleme, ekip yönetimi</p></div></div>
+                    <div class="cross-feature"><div class="cross-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M12 18h.01"/></svg></div><div><h4>Mobil Uygulama</h4><p>Barkod tarama, hızlı stok sayım, sahada erişim</p></div></div>
+                    <div class="cross-feature"><div class="cross-feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 109 20h9a5 5 0 000-10z"/></svg></div><div><h4>Bulut Altyapı</h4><p>Firebase ile güvenli, anlık senkronizasyon</p></div></div>
                 </div>
             </div>
         </div>
@@ -1026,20 +1040,20 @@ footer { border-top: 1px solid var(--border); padding: 56px 24px 36px; }
         <h2 class="section-title">Her sektöre uygun</h2>
         <p class="section-desc">Hangi işletme olursa olsun, Rafta sana uyum sağlar.</p>
         <div class="sectors-wrap">
-            <div class="sector-chip"><span class="e">🛒</span> Market</div>
-            <div class="sector-chip"><span class="e">🏪</span> Bakkal</div>
-            <div class="sector-chip"><span class="e">💊</span> Eczane</div>
-            <div class="sector-chip"><span class="e">📎</span> Kırtasiye</div>
-            <div class="sector-chip"><span class="e">🔧</span> Nalbur</div>
-            <div class="sector-chip"><span class="e">🍽️</span> Restoran</div>
-            <div class="sector-chip"><span class="e">👗</span> Giyim</div>
-            <div class="sector-chip"><span class="e">🚗</span> Oto Yedek Parça</div>
-            <div class="sector-chip"><span class="e">💻</span> Elektronik</div>
-            <div class="sector-chip"><span class="e">🌿</span> Bahçe & Tarım</div>
-            <div class="sector-chip"><span class="e">🎨</span> Hobi & Sanat</div>
-            <div class="sector-chip"><span class="e">🧹</span> Temizlik</div>
-            <div class="sector-chip"><span class="e">🐾</span> Pet Shop</div>
-            <div class="sector-chip"><span class="e">🏗️</span> İnşaat Malzeme</div>
+            <div class="sector-chip"><span class="e"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 2h2l2 8h6l2-5H6"/><circle cx="7" cy="13" r="1"/><circle cx="12" cy="13" r="1"/></svg></span> Market</div>
+            <div class="sector-chip"><span class="e"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6l1-4h10l1 4"/><path d="M2 6v8h12V6"/><rect x="6" y="10" width="4" height="4"/></svg></span> Bakkal</div>
+            <div class="sector-chip"><span class="e"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="1" width="8" height="14" rx="4"/><line x1="4" y1="8" x2="12" y2="8"/></svg></span> Eczane</div>
+            <div class="sector-chip"><span class="e"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8V5a2 2 0 014 0v7a3 3 0 006 0V5"/></svg></span> Kırtasiye</div>
+            <div class="sector-chip"><span class="e"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2a4 4 0 00-3.5 5.9L3 11.4 4.6 13l3.5-3.5A4 4 0 0010 2z"/></svg></span> Nalbur</div>
+            <div class="sector-chip"><span class="e"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 2v4c0 1.1.9 2 2 2h0c1.1 0 2-.9 2-2V2"/><line x1="5" y1="2" x2="5" y2="14"/><path d="M11 2v3c0 2 1 3 1 3v6"/></svg></span> Restoran</div>
+            <div class="sector-chip"><span class="e"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2h4M6 2L4 8h8L10 2M4 8l-1 6h10l-1-6"/></svg></span> Giyim</div>
+            <div class="sector-chip"><span class="e"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10V8l2-4h6l2 4v2a1 1 0 01-1 1H4a1 1 0 01-1-1z"/><circle cx="5" cy="10" r="1"/><circle cx="11" cy="10" r="1"/><line x1="1" y1="8" x2="15" y2="8"/></svg></span> Oto Yedek Parça</div>
+            <div class="sector-chip"><span class="e"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="12" height="8" rx="1.5"/><path d="M1 13h14"/></svg></span> Elektronik</div>
+            <div class="sector-chip"><span class="e"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 14V8"/><path d="M8 8c0-4 4-6 6-6-1 3-3 5-6 6"/><path d="M8 10c0-3-3-5-6-6 2 0 6 2 6 6"/></svg></span> Bahçe & Tarım</div>
+            <div class="sector-chip"><span class="e"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="8" r="6"/><circle cx="6" cy="6" r="1" fill="currentColor"/><circle cx="10" cy="6" r="1" fill="currentColor"/><circle cx="6" cy="10" r="1" fill="currentColor"/></svg></span> Hobi & Sanat</div>
+            <div class="sector-chip"><span class="e"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M8 1v7"/><path d="M5 8c0 0-2 3-2 5.5S4.5 15 8 15s5-.5 5-1.5S11 8 11 8H5z"/></svg></span> Temizlik</div>
+            <div class="sector-chip"><span class="e"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="8" cy="10" rx="3" ry="2.5"/><circle cx="4.5" cy="6" r="1.5"/><circle cx="11.5" cy="6" r="1.5"/><circle cx="6" cy="3.5" r="1.2"/><circle cx="10" cy="3.5" r="1.2"/></svg></span> Pet Shop</div>
+            <div class="sector-chip"><span class="e"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14V6l4-4 4 4v8"/><line x1="2" y1="14" x2="14" y2="14"/><rect x="6" y="9" width="4" height="5"/></svg></span> İnşaat Malzeme</div>
         </div>
     </div>
 </section>
